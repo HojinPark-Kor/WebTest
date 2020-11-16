@@ -11,11 +11,15 @@
 .Ball
 {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   
   background: greenyellow;
-  border-radius: 10px;
+  border-radius: 15px;
+
+  animation-name: Keyframes_appear;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
 
 .bounce
@@ -36,7 +40,25 @@
   50%
   {
     left: 50%; 
-    top:  70%;
+    top:  40%;
     animation-timing-function: ease-in;
+  }
+}
+
+@keyframes Keyframes_appear
+{
+  0%
+  {
+    left: 30px;
+    top: 30px;
+    width: 0px;
+    height: 0px;
+  }
+  100%
+  {
+    left: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
   }
 }
