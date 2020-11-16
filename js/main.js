@@ -1,11 +1,16 @@
 window.onload = function()
 {
-  document.body.onclick = BodyClick;
+  //document.getElementById("ball1").addEventListener("click", BodyClick);
+  //document.body.addEventListener('click', BodyClick);
 }
 
-function BodyClick(e)
+function BodyClick(event)
 {
-  document.body.innerHTML += "<div class='Ball'></div>";
+  pX = event.pageX - 15;
+  pY = event.pageY - 15;
+
+  sTemp = "<div class='Ball' style='left:" + pX +"px;top:" + pY +"px'></div>";
+  document.getElementById("dock").innerHTML = sTemp;
 }
 
 function Breed()
@@ -33,8 +38,3 @@ function ChangePosition()
 
     //element.classList.add("bounce");
 }
-
-
-
-//-----------------------------------
-AddEvent();

@@ -2,16 +2,21 @@
 <html>
     <head>
       <link rel="stylesheet" href="./css/main.css">
+      <style>
+        .FullBody
+        {
+          margin: 0px;
+          padding: 0px;
+          position: absolute;
+          width: 100%; 
+          height: 100%;
+        }
+      </style>
     </head>
-    <body style="background-color: cadetblue;">
-      <p style="color: pink;">클릭할 때 공 나오기 연습중</p>
-      <!--
-      <div>
-        <button class="container" onclick="ChangePosition()">Test</button>
+    <body>
+      <div id="dock" class="FullBody" style="background-color: cadetblue;" onclick="BodyClick(event)">
+        <p style="color: pink;">클릭할 때 공 나오기 연습중</p>
       </div>
-
-      <div id="ball1" class="Ball" style="display: flex;" onclick="ChangePosition()"></div>
-      -->
       <script src="./js/main.js"></script>
     </body>
 </html>
