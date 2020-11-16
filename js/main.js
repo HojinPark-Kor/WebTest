@@ -9,8 +9,11 @@ function BodyClick(event)
   pX = event.pageX - 15;
   pY = event.pageY - 15;
 
-  sTemp = "<div class='Ball' style='left:" + pX +"px;top:" + pY +"px'></div>";
-  document.getElementById("dock").innerHTML = sTemp;
+  var div = document.createElement('div');
+  div.setAttribute('class', 'Ball');
+  div.setAttribute('style',"left:" + pX +"px;top:" + pY +"px");
+
+  document.getElementById("dock").appendChild(div);
 }
 
 function Breed()

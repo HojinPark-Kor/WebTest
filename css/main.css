@@ -21,13 +21,12 @@ html, body
   width: 30px;
   height: 30px;
   
-  background: greenyellow;
+  background: pink;
   border-radius: 15px;
 
   animation-name: Keyframes_appear;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
-  
 }
 
 .bounce
