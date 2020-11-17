@@ -2,8 +2,14 @@ const _sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
 window.onload = function()
 {
-  //document.getElementById("ball1").addEventListener("click", BodyClick);
-  //document.body.addEventListener('click', BodyClick);
+  var date = new Date();
+  date.setDate(date.getDate() - 1);
+
+  var willCookie = "";
+  willCookie += "CookieName=Value;";
+  willCookie += "Expires=" + date.toUTCString();
+
+  document.cookie = willCookie;
 }
 
 function BodyClick(event)
