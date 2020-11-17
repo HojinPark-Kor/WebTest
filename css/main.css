@@ -13,6 +13,8 @@ html, body
 .container
 {
   position: absolute;
+  width: 30px;
+  height: 30px;
 }
 
 .Ball
@@ -21,18 +23,21 @@ html, body
   width: 30px;
   height: 30px;
   
-  background: pink;
+  background-color: pink;
   border-radius: 15px;
-
-  animation-name: Keyframes_appear;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
 }
 
 .bounce
 {
   animation-name: Keyframes_bounce;
-  animation-duration: 1s;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+}
+
+.appear
+{
+  animation-name: Keyframes_appear;
+  animation-duration: 0.7s;
   animation-iteration-count: 1;
 }
 
@@ -40,17 +45,17 @@ html, body
 {
   0%,100%
   {
-    left: 50%; 
-    top:  80%;
+    transform: translateY(0);
     animation-timing-function: ease-out;
   }
   50%
   {
-    left: 50%; 
-    top:  40%;
+    transform: translateY(-100px);
+    
     animation-timing-function: ease-in;
   }
 }
+
 
 @keyframes Keyframes_appear
 {
