@@ -1,4 +1,5 @@
 const _sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+const shiftSpeed = 3.5
 
 var moveWay = 1;
 var preWay = 0;
@@ -9,8 +10,8 @@ fallRain();
 
 function MoveRain(event)
 {
-  if((preWay - event.pageX) > 0) moveWay = -1;
-  else moveWay = 1;
+  if((preWay - event.pageX) > 0) moveWay = -shiftSpeed;
+  else moveWay = shiftSpeed;
 
   preWay = event.pageX;
 }
@@ -25,17 +26,17 @@ async function MakeRain()
   {
     $heart = CreateHeart(nCnt);
 
-    nLeft = Math.round(Math.random() * 93);
+    nLeft = Math.round(Math.random() * 140);
 
     $heart.css({
-      'left' : nLeft + "%",
+      'left' : nLeft-20 + "%",
       'top' : "0%",
     });
     
     RainList.push($heart);
     $dock.append($heart);
 
-    await _sleep(Math.round(Math.random() * 100));
+    await _sleep(Math.round(Math.random() * 500));
   }
 }
 
@@ -54,11 +55,11 @@ async function fallRain()
 
       if(dockHeight > temp.offset().top) 
       {
-        temp.offset({top : temp.offset().top+1.5});
+        temp.offset({top : temp.offset().top + 4.5});
       
-        if((moveWay == 1 && temp.offset().left < (dockWidth - 20)) ||
-          (moveWay == -1 && temp.offset().left > 0))
-          temp.offset({left : temp.offset().left+moveWay});
+        if((moveWay == shiftSpeed && temp.offset().left < (dockWidth - 20)) ||
+          (moveWay == -shiftSpeed && temp.offset().left > 0))
+          temp.offset({left : temp.offset().left + moveWay});
       }
       else
       {
