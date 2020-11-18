@@ -1,0 +1,55 @@
+*
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+.Shake
+{
+  position: absolute;
+
+  animation-name: frame_Shake;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+.Fall
+{
+  position: absolute;
+
+  animation-name: frame_Fall;
+  animation-duration: 2000ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes frame_Shake
+{
+  0%
+  {
+    transform: rotate(30deg);
+    animation-timing-function: ease-in;
+  }
+  50%
+  {
+    transform: rotate(-30deg);
+    animation-timing-function: ease-in;
+  }
+  100%
+  {
+    transform: rotate(30deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes frame_Fall
+{
+  0%
+  {
+    transform: translateY(-2000px);
+  }
+  100%
+  {
+    transform: translateY(0px);
+    animation-timing-function: ease-in;
+  }
+}
