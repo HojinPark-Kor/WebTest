@@ -40,7 +40,7 @@ async function fallRain()
       nLoop = 0;
     }
 
-    dockHeight = $("#dock").height() - 20;
+    dockHeight = $("#dock").height() + 20;
     dockWidth  = $("#dock").width();
 
     RainList.forEach(element=>
