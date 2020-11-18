@@ -5,7 +5,6 @@ var moveWay = shiftSpeed;
 var preWay = 0;
 var RainList = [];
 
-MakeRain();
 fallRain();
 
 function MoveRain(event)
@@ -16,36 +15,31 @@ function MoveRain(event)
   preWay = event.pageX;
 }
 
-async function MakeRain()
-{
-  $dock = $("#dock");
-
-  nCnt = 0;
-
-  while(true)
-  {
-    $heart = CreateHeart(nCnt);
-
-    nLeft = Math.round(Math.random() * 140);
-
-    $heart.css({
-      'left' : nLeft-20 + "%",
-      'top' : "0%",
-    });
-    
-    RainList.push($heart);
-    $dock.append($heart);
-
-    await _sleep(Math.round(Math.random() * 500));
-  }
-}
-
 async function fallRain()
 {
-  turn = 1;
+  nCnt  = 0;
+  nLoop = 0;
+  $dock = $("#dock");
 
   while(true)
   {
+    if(nLoop > 10)
+    {
+      $heart = CreateHeart(nCnt++);
+
+      nLeft = Math.round(Math.random() * 140);
+  
+      $heart.css({
+        'left' : nLeft-20 + "%",
+        'top' : "0%",
+      });
+      
+      RainList.push($heart);
+      $dock.append($heart);
+
+      nLoop = 0;
+    }
+
     dockHeight = $("#dock").height() - 20;
     dockWidth  = $("#dock").width();
 
@@ -57,8 +51,8 @@ async function fallRain()
       {
         temp.offset({top : temp.offset().top + 4.5});
       
-        if((moveWay == shiftSpeed && temp.offset().left < (dockWidth + 20)) ||
-          (moveWay == -shiftSpeed && temp.offset().left > -40))
+        if((moveWay ==  shiftSpeed && temp.offset().left < (dockWidth + 20)) ||
+           (moveWay == -shiftSpeed && temp.offset().left > -40))
           temp.offset({left : temp.offset().left + moveWay});
       }
       else
@@ -72,6 +66,8 @@ async function fallRain()
     });
 
     await _sleep(1);
+
+    nLoop++;
   }
 }
 
