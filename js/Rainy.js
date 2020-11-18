@@ -57,8 +57,8 @@ async function fallRain()
       {
         temp.offset({top : temp.offset().top + 4.5});
       
-        if((moveWay == shiftSpeed && temp.offset().left < (dockWidth - 20)) ||
-          (moveWay == -shiftSpeed && temp.offset().left > 0))
+        if((moveWay == shiftSpeed && temp.offset().left < (dockWidth + 20)) ||
+          (moveWay == -shiftSpeed && temp.offset().left > -40))
           temp.offset({left : temp.offset().left + moveWay});
       }
       else
