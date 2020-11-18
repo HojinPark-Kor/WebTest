@@ -9,7 +9,7 @@
   position: absolute;
 
   animation-name: frame_Shake;
-  animation-duration: 1000ms;
+  animation-duration: 500ms;
   animation-iteration-count: infinite;
 }
 

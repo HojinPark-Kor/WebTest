@@ -1,7 +1,7 @@
 const _sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 const shiftSpeed = 3.5
 
-var moveWay = 1;
+var moveWay = shiftSpeed;
 var preWay = 0;
 var RainList = [];
 
