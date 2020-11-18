@@ -76,7 +76,7 @@ function CreateHeart(No)
   //<img class="Shake" src="Resource/heart.svg">
   $heart = $('<img>');//document.createElement('img');
   $heart.addClass('Shake');
-  $heart.attr("src",'Resource/heart.svg?1' + Date);
+  $heart.attr("src",'Resource/heart_1.svg?1' + Date);
   $fall = $("<div id='h"+No+"' style='position: absolute'></div>");
   //$fall.addClass('Fall');
   $fall.append($heart);
